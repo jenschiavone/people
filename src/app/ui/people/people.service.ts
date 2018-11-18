@@ -92,8 +92,7 @@ export class PeopleService {
           var dupes = [];
           index++;
           if (self.isPossibleDupe(person.email_address, (people[index]).email_address)) {
-            dupes.push(person)
-            dupes.push(people[index])
+            dupes.push(person, people[index])
           }
           if (dupes.length > 0) {
             possibleDupes.push(dupes)
