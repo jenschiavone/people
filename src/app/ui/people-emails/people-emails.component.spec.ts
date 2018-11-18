@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PeopleEmailsComponent } from './people-emails.component';
+import { PeopleService } from '../people/people.service';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import {HttpModule} from '@angular/http';
 
 describe('PeopleEmailsComponent', () => {
   let component: PeopleEmailsComponent;
@@ -8,7 +11,9 @@ describe('PeopleEmailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeopleEmailsComponent ]
+      imports: [HttpModule],
+      declarations: [ PeopleEmailsComponent ],
+      providers: [ PeopleService ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PeopleComponent } from './people.component';
+import { PeopleService } from '../people/people.service';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import {HttpModule} from '@angular/http';
 
 describe('PeopleComponent', () => {
   let component: PeopleComponent;
@@ -8,7 +11,9 @@ describe('PeopleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeopleComponent ]
+      imports: [HttpModule],
+      declarations: [ PeopleComponent ],
+      providers: [ PeopleService ]
     })
     .compileComponents();
   }));
