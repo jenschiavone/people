@@ -11,11 +11,11 @@ export class PeopleEmailsComponent implements OnInit {
   people: Person[];
   occurrences: object;
 
+  constructor(private peopleService: PeopleService) { }
+
   getEmailCharacterCounts(people) {
     this.occurrences = this.peopleService.getEmailCharacterCounts(people);
   }
-
-  constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
     this.peopleService.getPeople().subscribe(people => this.people = people)

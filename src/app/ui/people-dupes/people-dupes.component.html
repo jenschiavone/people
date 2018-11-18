@@ -1,3 +1,22 @@
-<p>
-  people-dupes works!
-</p>
+<div *ngIf="!possibleDupes">
+	<p>Get possible dupes</p>
+	<button 
+	(click)="getPossibleDupes(people)" type="button" class="btn btn-dark">Go</button>
+</div>
+<div *ngIf="possibleDupes">
+  <p>The following accounts might be duplicates:</p>
+</div>
+<div >
+  <ng-container>
+  	<table class="table" *ngIf="possibleDupes">
+  		<thead class="thead-dark">
+  			<th>First Email</th>       
+        <th>Second Email</th>
+  		</thead>
+  		<tr *ngFor="let pair of possibleDupes">
+        <td>{{ pair[0].email_address }}</td>
+        <td>{{ pair[1].email_address }}</td>
+      </tr>
+  	</table>
+  </ng-container>  
+</div>
