@@ -9,6 +9,8 @@ import { PeopleService } from './people/people.service';
 import { PeopleRoutingModule } from './people/people-routing.module';
 import { PeopleEmailsRoutingModule } from './people-emails/people-emails-routing.module';
 import { PeopleEmailsComponent } from './people-emails/people-emails.component';
+import { PeopleDupesComponent } from './people-dupes/people-dupes.component';
+import { PeopleDupesRoutingModule } from './people-dupes/people-dupes-routing.module';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { PeopleEmailsComponent } from './people-emails/people-emails.component';
     HeaderComponent,
     FooterComponent,
     PeopleComponent,
-    PeopleEmailsComponent
+    PeopleEmailsComponent,
+    PeopleDupesComponent
     ],
   imports: [
     CommonModule,
     PeopleRoutingModule,
-    PeopleEmailsRoutingModule
+    PeopleEmailsRoutingModule,
+    PeopleDupesRoutingModule
   ],
   exports: [
   PeopleComponent,
