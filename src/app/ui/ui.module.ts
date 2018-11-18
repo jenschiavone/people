@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PeopleComponent } from './people/people.component';
+import { PeopleService } from './people/people.service';
 
 import { PeopleRoutingModule } from './people/people-routing.module';
 import { PeopleEmailsRoutingModule } from './people-emails/people-emails-routing.module';
@@ -27,6 +28,6 @@ import { PeopleEmailsComponent } from './people-emails/people-emails.component';
   HeaderComponent,
   FooterComponent
   ],
-  providers: []
+  providers: [PeopleService]
 })
 export class UiModule { }

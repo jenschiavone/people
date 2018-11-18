@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  peopleApiBaseUrl: 'https://jls-people-api.herokuapp.com/'
 };

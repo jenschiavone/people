@@ -1,3 +1,16 @@
-<p>
-  people works!
-</p>
+<div>
+  <ng-container>
+  	<table class="table">
+  		<thead class="thead-dark">
+  			<th>Name</th> 			
+  			<th>Email Address</th>
+  			<th>Job Title</th>
+  		</thead>
+  		<tr *ngFor="let person of people">
+  			<td>{{ person.display_name }}</td>
+  			<td>{{ person.email_address }}</td>
+  			<td>{{ person.job_title }}</td>
+  		</tr>
+  	</table>
+  </ng-container>  
+</div>
