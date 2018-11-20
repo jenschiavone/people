@@ -20,26 +20,39 @@ export class PeopleService {
   }
 
   getEmailCharacterCounts(people) {
-    var occurrences = {};
+    var allCharacterCounts = []
     const emails = this.getEmailList(people);
     const allChars = (emails.join('').trim()).replace(/\s/g, '').split('');
+
     const unique = (value, index, self) => {
       return self.indexOf(value) === index;
     }
     const uniqueChars = allChars.filter(unique);
 
-    for (let char of allChars) {
-      for (let uniqueChar of uniqueChars) {
+    for (let uniqueChar of uniqueChars) {
+      var occurrences = {};
+      for (let char of allChars) {
         if (uniqueChar === char) {
           if (!occurrences.hasOwnProperty(uniqueChar)) {
-            occurrences[uniqueChar] = 1;
+            occurrences[uniqueChar] = {
+              "character": uniqueChar,
+              "count": 1
+            }
           } else {
-            occurrences[uniqueChar] = occurrences[uniqueChar] + 1;
+            occurrences[uniqueChar].count++;
           }         
-        } 
+        }
       }
+      allCharacterCounts.push(occurrences[uniqueChar]);      
     }
-    return occurrences;
+    return allCharacterCounts.sort(function(a, b) {
+      var charA=a.count, charB=b.count
+      if (charA < charB)
+          return 1 
+      if (charA > charB)
+          return -1
+      return 0
+    })
   }
 
   isPossibleDupe(string1: string, string2: string) {

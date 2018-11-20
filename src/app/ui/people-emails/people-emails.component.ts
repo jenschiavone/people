@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../people/person';
 import { PeopleService } from '../people/people.service';
+import { CharacterOccurrence } from './character-occurrence';
 
 @Component({
   selector: 'app-people-emails',
@@ -9,7 +10,7 @@ import { PeopleService } from '../people/people.service';
 export class PeopleEmailsComponent implements OnInit {
 
   people: Person[];
-  occurrences: object;
+  occurrences:  CharacterOccurrence[];
 
   constructor(private peopleService: PeopleService) { }
 
